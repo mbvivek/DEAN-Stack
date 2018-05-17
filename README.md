@@ -52,6 +52,13 @@ $ cd client
 $ npm install
 $ ng serve
 ```
+
+> In case of QR Code not showing on login page or `crypto.createHash()` undefined error, please install the `crypto-browserify` module as a project dependency.
+```sh
+$ cd client
+$ npm install crypto-browserify
+```
+
 #### Server
 ```sh
 $ cd server
