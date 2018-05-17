@@ -17,7 +17,20 @@ DEAN Stack is a blockchain enabled, Angular and NodeJS powered framework to buil
 
 > `client` and `server` interacts using `REST`ful APIs
 
-This framework uses a number of open source projects to work properly -
+This framework uses a number of open source projects to work properly:
+
+| Project         | Version |
+| -------------   |  ------:|
+| Angular         |  `v5.2` |
+| uport-connect   |  `v0.7` |
+| bootstrap       |  `v4.1` |
+| jquery          |  `v3.3` |
+| Node            |  `v8.11`|
+| web3            |  `v1.0` |
+| uport           |  `v0.6` |
+| express         |  `v4.16`|
+| solc            |  `v0.4` |
+| mongoose        |  `v5.1` |
 
 >   Angular         `v5.2`
 >   uport-connect   `v0.7`
