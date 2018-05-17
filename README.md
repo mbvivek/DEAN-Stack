@@ -5,11 +5,11 @@ DEAN Stack is a blockchain enabled, Angular and NodeJS powered framework to buil
 ![alt text](https://raw.githubusercontent.com/mbvivek/DEAN-Stack/master/Dean-Stack-Architecture.jpg "DEAN Stack Architecture")
 
 # Architecture
-##### Client
+#### Client
   - Angular
   - uport-connect
 
-##### Server
+#### Server
   - NodeJS
   - Ganache-cli (Testrpc for Ethereum)
   - Mongo DB
