@@ -7,25 +7,25 @@ DEAN Stack is a blockchain enabled, Angular and NodeJS powered framework to buil
 # Architecture
 #### Client
   - Angular
-  - uport-connect
+  - Uport-connect
 
 #### Server
   - NodeJS
   - Ganache-cli (Testrpc for Ethereum)
   - Mongo DB
-  - uport-js
+  - Uport-js
 
 > `client` and `server` interacts using `REST`ful APIs
 
 This framework uses a number of open source projects to work properly:
 
 | Project         | Version |
-| -------------   |  ------:|
-| Angular         |  `v5.2` |
+| --------------- | -------:|
+| angular         |  `v5.2` |
 | uport-connect   |  `v0.7` |
 | bootstrap       |  `v4.1` |
 | jquery          |  `v3.3` |
-| Node            |  `v8.11`|
+| node            |  `v8.11`|
 | web3            |  `v1.0` |
 | uport           |  `v0.6` |
 | express         |  `v4.16`|
@@ -35,15 +35,15 @@ This framework uses a number of open source projects to work properly:
 This framework requires the below to be already installed on the system
 
 | Project         | Version |
-| -------------   |  ------:|
-| Angular CLI     |  `v1.7` |
+| --------------- | -------:|
+| angular CLI     |  `v1.7` |
 | npm             |  `v5.6` |
 | ganache-cli     |  `v6.1` |
 | mongodb         |  `v3.4` |
 
 > `ganache-cli` should be running before starting the `server`
 
->   By default [mLab](https://www.mlab.com/) Database-as-a-Service for MongoDB is used
+> [mLab](https://www.mlab.com/) - Database-as-a-Service is used for MongoDB
 
 # Installation
 #### Client
