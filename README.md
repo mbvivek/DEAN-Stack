@@ -69,7 +69,7 @@ $ node server
 #### Client
 Built on Angular - a powerful front-end framework. At first user needs to use `uport` app and scan the QR code on the login screen to login.
 
-After logging in, an example smart contract is written in solidity language. You can deploy the deploy a contract, fetch events from it, and update it.
+After logging in, an example smart contract is written in solidity language. You can deploy a contract, fetch events from it, and update it.
 
 Every result of an action will be logged in the logs.
 
