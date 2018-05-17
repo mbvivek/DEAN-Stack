@@ -1,0 +1,123 @@
+<div class="jumbotron m-0">
+  <div class="container">
+    <h1 class="display-3">Welcome to DEAN-Stack!</h1>
+    <h3>
+      A framework to build
+      <b>D</b>App on
+      <b>E</b>thereum blockchain with
+      <b>A</b>ngular and
+      <b>N</b>odeJS
+    </h3>
+  </div>
+</div>
+<div class="m-1">
+  <button class="btn btn-danger btn-sm float-right" (click)="logout()">Logout</button>
+  <br/>
+</div>
+<hr/>
+<div class="row m-2">
+  <div class="col-md-6">
+    <b>Below is a simple contract which takes a greeting message as the arguement.</b>
+    <textarea class="form-control" style="min-width: 100%" rows="20">
+    /* Greet Contract */
+    contract GreetContract {
+    
+      /* attributes */
+      uint createdTime;
+      address owner;
+      string greetMessage;
+    
+      /* events */
+      event GreetContractDeployed(uint time, address indexed owner, string greetMessage);
+      event GreetContractUpdated(uint time, string greetMessage);
+    
+      /* constructor */
+      function GreetContract(string _greetMessage) public payable {
+          createdTime = now;
+          owner = msg.sender;
+          greetMessage = _greetMessage;
+          GreetContractDeployed(createdTime, owner, greetMessage);
+      }
+    
+      /* method */
+      function updateMessage(string _greetMessage) public payable returns(bool) {
+          if (msg.sender == owner) {
+              greetMessage = _greetMessage;
+              GreetContractUpdated(now, greetMessage);
+              return true;
+          } else {
+              return false;
+          }
+      }
+    }
+    </textarea>
+  </div>
+  <div class="col-md-6">
+    <div>
+      <b>Instructions</b>
+      <ul>
+        <li>Deploy a contract by entering a message. Contract address will be logged below.</li>
+        <li>Get the contract address from the logs to get the events. All events from the contract will be logged below.</li>
+        <li>To update the contract, enter the contract address and the message. Receipt will be logged below.</li>
+      </ul>
+    </div>
+    <hr>
+    <form #deployContractForm="ngForm" (submit)="deployContract($event, deployContractForm)">
+      <b>Deploy this contract on the blockchain</b>
+      <br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Message" name="deployContract_greetMessage" [(ngModel)]="deployContract_greetMessage"
+          required>
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-secondary">Deploy Contract</button>
+        </div>
+      </div>
+    </form>
+    <hr>
+    <form #getAllEventsForm="ngForm" (submit)="getAllEvents($event, getAllEventsForm)">
+      <b>Get all events from the contract</b>
+      <br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Contract Address" name="getAllEvents_contractAddress" [(ngModel)]="getAllEvents_contractAddress"
+          required>
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-secondary">Get All Events</button>
+        </div>
+      </div>
+    </form>
+    <hr>
+    <form #updateContractForm="ngForm" (submit)="updateContract($event, updateContractForm)">
+      <b>Update the greeting message</b>
+      <br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Contract Address" name="updateContract_contractAddress" [(ngModel)]="updateContract_contractAddress"
+          required>
+        <input type="text" class="form-control" placeholder="New Message" name="updateContract_greetMessage" [(ngModel)]="updateContract_greetMessage"
+          required>
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-secondary">Update Contract</button>
+        </div>
+      </div>
+    </form>
+    <hr>
+    <form #getDataFromDBFrom="ngForm" (submit)="getDataFromDB($event, getDataFromDBFrom)">
+      <b>Get contract information from Database</b>
+      <br>
+      <div class="input-group">
+        <button type="submit" class="btn btn-secondary">Get Data from Database</button>
+      </div>
+    </form>
+  </div>
+</div>
+<hr/>
+<div class="row m-4">
+  <b>Logs:</b>
+  <div class="border border-secondary p-2" style="width: 100%; height: 400px; overflow-y: scroll;">
+    <ol>
+      <li *ngFor="let log of logs">
+        <pre>{{log.heading}} <br> {{log.body}}</pre>
+      </li>
+    </ol>
+  </div>
+  <button class="btn btn-info btn-sm mt-1" (click)="clearLogs()">Clear Logs</button>
+</div>

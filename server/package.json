@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Dean Stack Server",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "ganache-cli": "^6.1.0",
+    "mongoose": "^5.1.1",
+    "solc": "^0.4.23",
+    "uport": "^0.6.2",
+    "web3": "^1.0.0-beta.33"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Vivek Madhusudan Badrinarayan",
+  "license": "ISC"
+}
