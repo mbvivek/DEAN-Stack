@@ -73,4 +73,4 @@ Built on NodeJS and Express framework. Server is connected to Ethereum test-rpc 
 Client will interact with the server using REST APIs. The server, upon request from the client, deploys contract on the test-rpc, fetches events from a contract and updates a contract. An appropriate response is sent back to the client after serving the request.
 
 # Utilities
-> The framework has solidity compiler in-built and methods compile, deploy and interact with smart contracts. Means, no need to use any third-party apps such as `remix` to compile, deploy and interact with smart contracts.
+The framework has solidity compiler in-built and methods compile, deploy and interact with smart contracts. Means, no need to use any third-party apps such as `remix` to compile, deploy and interact with smart contracts.
