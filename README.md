@@ -58,6 +58,7 @@ $ cd server
 $ npm install
 $ node server
 ```
+> Enable 'Cross-Origin Resource Sharing (CORS)' on your browser if you are running `client` and `server` on the same machine.
 
 # Working
 #### Client
