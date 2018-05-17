@@ -1,6 +1,6 @@
 # DEAN Stack
 
-DEAN Stack is a blockchain enabled, Angular and NodeJS powered framework to build decentralized web-apps.
+DEAN Stack is a blockchain enabled, Angular and NodeJS powered framework to build decentralized web-apps that includes [uPort](https://www.uport.me/) for identity management.
 
 ![alt text](https://raw.githubusercontent.com/mbvivek/DEAN-Stack/master/Dean-Stack-Architecture.jpg "DEAN Stack Architecture")
 
@@ -58,3 +58,16 @@ $ cd server
 $ npm install
 $ node server
 ```
+
+# Working
+#### Client
+`client` is built on Angular - a powerful front-end framework. At first user needs to use `uport` app and scan the QR code on the login screen to login.
+After logging in, an example smart contract is written in solidity language. You can deploy the deploy a contract, fetch events from it, and update it.
+Every result of an action will be logged in the logs.
+
+#### Server
+`server` is built on NodeJS. The `server` is connected to Ethereum `test-rpc` using `web3` and to `mongo-db` using `mongoose`. The `client` will interact with the `server` using REST APIs. The `server`, upon request from the `client`, deploys contract on the `test-rpc`, fetches events from a contract and updates a contract. Appropriate `response` is sent back to the `client` after serving the `request`.
+
+> `server` now has solidity compiler in-built. Means, no need to use any other apps like `remix` to compile solidity files. With just one function call, you get the ABI and bytecode of the solidity file.
+
+> `mongo-db` can be used to store any off-chain data.
