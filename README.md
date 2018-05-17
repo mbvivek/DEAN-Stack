@@ -61,13 +61,16 @@ $ node server
 
 # Working
 #### Client
-`client` is built on Angular - a powerful front-end framework. At first user needs to use `uport` app and scan the QR code on the login screen to login.
+Built on Angular - a powerful front-end framework. At first user needs to use `uport` app and scan the QR code on the login screen to login.
+
 After logging in, an example smart contract is written in solidity language. You can deploy the deploy a contract, fetch events from it, and update it.
+
 Every result of an action will be logged in the logs.
 
 #### Server
-`server` is built on NodeJS. The `server` is connected to Ethereum `test-rpc` using `web3` and to `mongo-db` using `mongoose`. The `client` will interact with the `server` using REST APIs. The `server`, upon request from the `client`, deploys contract on the `test-rpc`, fetches events from a contract and updates a contract. Appropriate `response` is sent back to the `client` after serving the `request`.
+Built on NodeJS and Express framework. Server is connected to Ethereum test-rpc using `web3` and connected to MongoDB using `mongoose`. 
 
-> `server` now has solidity compiler in-built. Means, no need to use any other apps like `remix` to compile solidity files. With just one function call, you get the ABI and bytecode of the solidity file.
+Client will interact with the server using REST APIs. The server, upon request from the client, deploys contract on the test-rpc, fetches events from a contract and updates a contract. An appropriate response is sent back to the client after serving the request.
 
-> `mongo-db` can be used to store any off-chain data.
+# Utilities
+> The framework has solidity compiler in-built and methods compile, deploy and interact with smart contracts. Means, no need to use any third-party apps such as `remix` to compile, deploy and interact with smart contracts.
