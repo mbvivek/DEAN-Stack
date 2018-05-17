@@ -32,11 +32,11 @@ This framework uses a number of open source projects to work properly:
 | solc            |  `v0.4` |
 | mongoose        |  `v5.1` |
 
-This framework requires the below to be already installed on the system
+This framework requires the below projects to be already installed on the system
 
 | Project         | Version |
 | --------------- | -------:|
-| angular CLI     |  `v1.7` |
+| angular-cli     |  `v1.7` |
 | npm             |  `v5.6` |
 | ganache-cli     |  `v6.1` |
 | mongodb         |  `v3.4` |
